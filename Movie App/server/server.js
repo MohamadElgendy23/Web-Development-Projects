@@ -1,13 +1,23 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const mongoose = require("mongoose");
 const reviewsRoutes = require("./routes/reviews-routes");
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/reviews/", reviewsRoutes);
+mongoose.connect(process.env.MONGODB_CONN_STRING).then(() => {
+  console.log("Database is up and running");
+});
 
-app.listen(() => {
+app.use("/api/reviews", reviewsRoutes);
+app.use("*", (req, res) => {
+  res.status(404).json({ errorMessage: "Page not found" });
+});
+
+app.listen(4000, () => {
   console.log("Server listening on port 4000");
-}, 4000);
+});
