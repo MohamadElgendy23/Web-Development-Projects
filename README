@@ -2,4 +2,7 @@ Web Development Projects
 
 These projects are full-stack, meaning both server and client are involved. Feel free to download and learn! :)
 
-1) Movie App
+1) Movie Searcher
+Visually appealing application where user can search any movie and the corresponding movies will be displayed.
+>Languages: JavaScript, HTML, CSS, MongoDB
+>Frameworks: Node.js, Express.js
