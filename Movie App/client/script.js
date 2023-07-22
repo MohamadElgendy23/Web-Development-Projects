@@ -80,6 +80,13 @@ function handleDisplayMovie(movie) {
   movieContainer.setAttribute("class", "movie-container");
   movieContainer.appendChild(movieCenter);
   movieContainer.appendChild(movieTitle);
+  const originalHTML = movieContainer.innerHTML;
+  movieContainer.onmouseover = () => {
+    movieContainer.innerHTML = `<p style=>Description: <br/><br/> ${movie.overview}</p>`;
+  };
+  movieContainer.onmouseleave = () => {
+    movieContainer.innerHTML = originalHTML;
+  };
 
   const movieColumn = document.createElement("div");
   movieColumn.setAttribute("class", "column-container");
