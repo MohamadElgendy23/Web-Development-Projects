@@ -54,8 +54,9 @@ h3 {
     background-color: rgb(36, 35, 35);
     padding: 15px;
     width: 350px;
+    height: 425px;
     text-align: center;
-    font-size: medium;
+    font-size: small;
 }
 
 .thumbnail {
