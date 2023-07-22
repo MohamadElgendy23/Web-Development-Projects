@@ -2,7 +2,8 @@
 const API_PATH =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=578421658349dbe13bbe06fe76a6eaa1&page=1";
 const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
-let QUERY_PATH = `https://api.themoviedb.org/3/search/movie?&api_key=578421658349dbe13bbe06fe76a6eaa1&query=`;
+let QUERY_PATH =
+  "https://api.themoviedb.org/3/search/movie?&api_key=578421658349dbe13bbe06fe76a6eaa1&query=";
 
 const searchForm = document.getElementById("search-form");
 const searchBar = document.getElementById("search-input");
@@ -13,7 +14,7 @@ let originalMovies = [];
 let fetchedMovies = [];
 
 //when app is first loaded, load and disply first page movies (no fetched movies yet)
-firstPageMovies();
+fetchMovies("");
 
 searchBar.onclick = () => {
   searchBar.placeholder = "";
@@ -21,27 +22,28 @@ searchBar.onclick = () => {
 
 searchForm.onsubmit = searchMovie;
 
-//first page movies (original movies)
-async function firstPageMovies() {
-  const originalMoviesRes = await fetch(API_PATH);
-  const originalMoviesObj = await originalMoviesRes.json();
-  originalMovies = [...originalMoviesObj.results];
-  displayMovies(0);
-}
-
 //when user searches up a movie
 async function searchMovie(e) {
   e.preventDefault();
   searchBar.value && (await fetchMovies(searchBar.value));
 }
 
-//fetches the movie(s) from API given the searched movie
+//fetches the movie(s) from API given the searched movie (or first page movies if none)
 async function fetchMovies(searchedMovie) {
-  QUERY_PATH += `${searchedMovie}`;
-  const fetchedMoviesRes = await fetch(QUERY_PATH);
-  const fetchedMoviesObj = await fetchedMoviesRes.json();
-  fetchedMovies = [...fetchedMoviesObj.results];
-  displayMovies(1);
+  if (!searchedMovie.length) {
+    const originalMoviesRes = await fetch(API_PATH);
+    const originalMoviesObj = await originalMoviesRes.json();
+    originalMovies = [...originalMoviesObj.results];
+    displayMovies(0);
+  } else {
+    QUERY_PATH += searchedMovie;
+    const fetchedMoviesRes = await fetch(QUERY_PATH);
+    const fetchedMoviesObj = await fetchedMoviesRes.json();
+    fetchedMovies = [...fetchedMoviesObj.results];
+    !fetchedMovies.length
+      ? (moviesContainer.innerHTML = "<h1>No Movies Found</h1>")
+      : displayMovies(1);
+  }
 }
 
 //displays the fetched movies (0 => no fetched movies, 1 => fetched movies)
@@ -51,9 +53,12 @@ function displayMovies(option) {
       handleDisplayMovie(movie);
     });
   } else {
+    moviesContainer.innerHTML = ""; //reset container
     fetchedMovies.forEach((movie) => {
       if (movie.poster_path) {
         handleDisplayMovie(movie);
+      } else {
+        fetchedMovies.remove(movie);
       }
     });
   }
