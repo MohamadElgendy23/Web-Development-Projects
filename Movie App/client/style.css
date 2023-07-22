@@ -22,7 +22,7 @@ h3 {
     color: white;
     text-align: center;
     text-transform: uppercase;
-    font-size: x-large;
+    font-size: xx-large;
     padding: 14px 16px;
     text-decoration: none;
     float: left;
@@ -30,7 +30,7 @@ h3 {
 
 .search-container {
     float: right;
-    padding-top: 12px;
+    padding-top: 25px;
 }
 
 .search-container input {
@@ -55,7 +55,6 @@ h3 {
     padding: 15px;
     width: 350px;
     text-align: center;
-
 }
 
 .thumbnail {
