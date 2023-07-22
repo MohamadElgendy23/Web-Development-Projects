@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(27, 22, 22);
+}
+
+body a {
+    text-decoration: none;
+}
+
+h3 {
+    color: white;
+}
+
+.top-navbar {
+    overflow: hidden;
+}
