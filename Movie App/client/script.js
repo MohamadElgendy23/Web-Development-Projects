@@ -52,7 +52,9 @@ function displayMovies(option) {
     });
   } else {
     fetchedMovies.forEach((movie) => {
-      handleDisplayMovie(movie);
+      if (movie.poster_path) {
+        handleDisplayMovie(movie);
+      }
     });
   }
 }
