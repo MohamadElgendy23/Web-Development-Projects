@@ -6,18 +6,14 @@ let QUERY_PATH = `https://api.themoviedb.org/3/search/movie?&api_key=57842165834
 
 const searchForm = document.getElementById("search-form");
 const searchBar = document.getElementById("search-input");
-const movieColumn = document.getElementsByClassName("column-container");
-const movieRow = document.getElementsByClassName("row-container");
-const movieContainer = document.getElementsByClassName("movie-container");
-const movieImage = document.getElementsByClassName("thumbnail");
-const movieTitle = document.getElementsByClassName("title");
+
+const moviesContainer = document.getElementById("movies-container");
 
 let originalMovies = [];
 let fetchedMovies = [];
 
 //when app is first loaded, load and disply first page movies (no fetched movies yet)
 firstPageMovies();
-displayMovies(0);
 
 searchBar.onclick = () => {
   searchBar.placeholder = "";
@@ -30,13 +26,13 @@ async function firstPageMovies() {
   const originalMoviesRes = await fetch(API_PATH);
   const originalMoviesObj = await originalMoviesRes.json();
   originalMovies = [...originalMoviesObj.results];
+  displayMovies(0);
 }
 
 //when user searches up a movie
 async function searchMovie(e) {
   e.preventDefault();
   searchBar.value && (await fetchMovies(searchBar.value));
-  displayMovies(1);
 }
 
 //fetches the movie(s) from API given the searched movie
@@ -45,6 +41,7 @@ async function fetchMovies(searchedMovie) {
   const fetchedMoviesRes = await fetch(QUERY_PATH);
   const fetchedMoviesObj = await fetchedMoviesRes.json();
   fetchedMovies = [...fetchedMoviesObj.results];
+  displayMovies(1);
 }
 
 //displays the fetched movies (0 => no fetched movies, 1 => fetched movies)
@@ -62,10 +59,28 @@ function displayMovies(option) {
 
 //helper function to handle html logic for each movie
 function handleDisplayMovie(movie) {
-  movieTitle[0].innerHTML = movie.title;
-  movieImage[0].src = IMAGE_PATH + movie.poster_path;
-  movieContainer[0].appendChild(movieTitle);
-  movieContainer[0].appendChild(movieImage);
-  movieRow[0].appendChild(movieContainer[0]);
-  movieColumn[0].appendChild(movieRow[0]);
+  const movieTitle = document.createElement("h3");
+  movieTitle.setAttribute("class", "title");
+  movieTitle.innerHTML = movie.title;
+
+  const movieCenter = document.createElement("center");
+  const movieImage = document.createElement("img");
+  movieImage.setAttribute("class", "thumbnail");
+  movieImage.src = IMAGE_PATH + movie.poster_path;
+  movieCenter.appendChild(movieImage);
+
+  const movieContainer = document.createElement("div");
+  movieContainer.setAttribute("class", "movie-container");
+  movieContainer.appendChild(movieCenter);
+  movieContainer.appendChild(movieTitle);
+
+  const movieColumn = document.createElement("div");
+  movieColumn.setAttribute("class", "column-container");
+  movieColumn.appendChild(movieContainer);
+
+  const movieRow = document.createElement("div");
+  movieRow.setAttribute("class", "row-container");
+  movieRow.appendChild(movieColumn);
+
+  moviesContainer.appendChild(movieRow);
 }
