@@ -84,7 +84,7 @@ function handleDisplayMovie(movie) {
   movieContainer.onmouseover = () => {
     movieContainer.innerHTML = `<p style=>Description: <br/><br/> ${movie.overview}</p>`;
   };
-  movieContainer.onmouseleave = () => {
+  movieContainer.onmouseout = () => {
     movieContainer.innerHTML = originalHTML;
   };
 
