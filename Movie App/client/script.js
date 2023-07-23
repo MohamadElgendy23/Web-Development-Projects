@@ -76,10 +76,16 @@ function handleDisplayMovie(movie) {
   movieImage.src = IMAGE_PATH + movie.poster_path;
   movieCenter.appendChild(movieImage);
 
+  const movieReviews = document.createElement("a");
+  movieReviews.setAttribute("class", "reviews");
+  movieReviews.href = "/reviews";
+  movieReviews.innerHTML = "Reviews";
+
   const movieContainer = document.createElement("div");
   movieContainer.setAttribute("class", "movie-container");
   movieContainer.appendChild(movieCenter);
   movieContainer.appendChild(movieTitle);
+  movieContainer.appendChild(movieReviews);
   const originalHTML = movieContainer.innerHTML;
   movieContainer.onmouseenter = () => {
     movieContainer.innerHTML = `<p>Description: <br/><br/> ${movie.overview}</p>`;

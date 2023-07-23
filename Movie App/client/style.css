@@ -64,3 +64,10 @@ h3 {
     width: 300px;
     border-radius: 20px;
 }
+
+.reviews {
+    position: relative;
+    top: -11px;
+    font-size:medium;
+    color: blue;
+}
