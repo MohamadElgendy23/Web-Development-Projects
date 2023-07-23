@@ -69,5 +69,7 @@ h3 {
     position: relative;
     top: -11px;
     font-size:medium;
-    color: blue;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
 }

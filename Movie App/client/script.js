@@ -76,10 +76,12 @@ function handleDisplayMovie(movie) {
   movieImage.src = IMAGE_PATH + movie.poster_path;
   movieCenter.appendChild(movieImage);
 
-  const movieReviews = document.createElement("a");
+  const movieReviews = document.createElement("button");
   movieReviews.setAttribute("class", "reviews");
-  movieReviews.href = "/reviews";
   movieReviews.innerHTML = "Reviews";
+  movieReviews.onclick = () => {
+    
+  };
 
   const movieContainer = document.createElement("div");
   movieContainer.setAttribute("class", "movie-container");
