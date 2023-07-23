@@ -79,9 +79,7 @@ function handleDisplayMovie(movie) {
   const movieReviews = document.createElement("button");
   movieReviews.setAttribute("class", "reviews");
   movieReviews.innerHTML = "Reviews";
-  movieReviews.onclick = () => {
-    
-  };
+  movieReviews.onclick = () => {};
 
   const movieContainer = document.createElement("div");
   movieContainer.setAttribute("class", "movie-container");

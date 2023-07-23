@@ -6,8 +6,7 @@ const Reviews = require("../models/review-model");
 reviewsRoutes.get("/movie/:id", async (req, res) => {
   try {
     const movieId = req.params.id;
-    const filteredReviewsCursor = await Reviews.find({ movieId: movieId });
-    const filteredReviews = filteredReviewsCursor?.toArray();
+    const filteredReviews = await Reviews.find({ movieId: movieId });
     if (!filteredReviews.length) {
       return res
         .status(404)
@@ -34,13 +33,13 @@ reviewsRoutes.post("/new", async (req, res) => {
 reviewsRoutes.get("/:id", async (req, res) => {
   try {
     const reviewId = req.params.id;
-    const foundReview = await Reviews.findOne({ _id: reviewId });
-    if (!foundReview) {
+    const requestedReview = await Reviews.findOne({ _id: reviewId });
+    if (!requestedReview) {
       return res
         .status(404)
         .json({ errorMessage: `Review with id ${reviewId} not found` });
     }
-    res.status(200).json(foundReview);
+    res.status(200).json(requestedReview);
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });
   }
@@ -57,12 +56,11 @@ reviewsRoutes.put("/:id", async (req, res) => {
         .status(404)
         .json({ errorMessage: `Review with id ${reviewId} not found` });
     }
-    //could also just do Reviews.findOne(id, user)
-    if (foundReview.user !== user) {
-      return res.status(404).json({
-        errorMessage: "This user does not own this review. Cannot update.",
-      });
-    }
+    await Reviews.updateOne(
+      { _id: reviewId },
+      { user: user, content: content }
+    );
+    res.status(200).json({ successMessage: "Updated review successfully!" });
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });
   }
@@ -72,20 +70,13 @@ reviewsRoutes.put("/:id", async (req, res) => {
 reviewsRoutes.delete("/:id", async (req, res) => {
   try {
     const reviewId = req.params.id;
-    const { user } = req.body;
     const foundReview = Reviews.findOne({ _id: reviewId });
     if (!foundReview) {
       return res
         .status(404)
         .json({ errorMessage: `Review with id ${reviewId} not found` });
     }
-    if (foundReview.user !== user) {
-      return res.status(404).json({
-        errorMessage: "This user does not own this review. Cannot delete.",
-      });
-    }
     await Reviews.deleteOne({ _id: reviewId });
-    await Reviews.save();
     res.status(200).json({ successMessage: "Deleted review successfully!" });
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });
