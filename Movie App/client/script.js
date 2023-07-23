@@ -85,10 +85,10 @@ function handleDisplayMovie(movie) {
   movieContainer.setAttribute("class", "movie-container");
   movieContainer.appendChild(movieCenter);
   movieContainer.appendChild(movieTitle);
-  movieContainer.appendChild(movieReviews);
   const originalHTML = movieContainer.innerHTML;
   movieContainer.onmouseenter = () => {
-    movieContainer.innerHTML = `<p>Description: <br/><br/> ${movie.overview}</p>`;
+    movieContainer.innerHTML = `<p>Description: <br/><br/> ${movie.overview} </p> <br/>`;
+    movieContainer.appendChild(movieReviews);
   };
   movieContainer.onmouseleave = () => {
     movieContainer.innerHTML = originalHTML;
