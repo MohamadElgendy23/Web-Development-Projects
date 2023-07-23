@@ -16,10 +16,10 @@ let fetchedMovies = [];
 //when app is first loaded, load and disply first page movies (no fetched movies yet)
 fetchMovies("");
 
+//event listeners
 searchBar.onclick = () => {
   searchBar.placeholder = "";
 };
-
 searchForm.onsubmit = searchMovie;
 
 //when user searches up a movie
