@@ -81,10 +81,10 @@ function handleDisplayMovie(movie) {
   movieContainer.appendChild(movieCenter);
   movieContainer.appendChild(movieTitle);
   const originalHTML = movieContainer.innerHTML;
-  movieContainer.onmouseover = () => {
-    movieContainer.innerHTML = `<p style=>Description: <br/><br/> ${movie.overview}</p>`;
+  movieContainer.onmouseenter = () => {
+    movieContainer.innerHTML = `<p>Description: <br/><br/> ${movie.overview}</p>`;
   };
-  movieContainer.onmouseout = () => {
+  movieContainer.onmouseleave = () => {
     movieContainer.innerHTML = originalHTML;
   };
 
