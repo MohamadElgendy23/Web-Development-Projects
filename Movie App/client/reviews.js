@@ -1,3 +1,10 @@
+const reviewURL = new URL(window.location.href);
+
+const movieTitle = reviewURL.searchParams("title");
+const movieId = url.searchParams.get("id");
+
+const 
+
 const reviewBar = document.getElementById("review-input");
 const userBar = document.getElementById("user-input");
 
