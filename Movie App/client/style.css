@@ -101,9 +101,9 @@ h3 {
 .new-review-container input {
     border-radius: 15px;
     height:28px;
-    width: 215px;
+    width: 220px;
     background-color: rgb(36, 35, 35);
-    font-size: medium;
+    font-size: large;
     color: white;
 }
 
