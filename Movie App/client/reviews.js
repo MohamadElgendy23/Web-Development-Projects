@@ -1,9 +1,13 @@
-const reviewURL = new URL(window.location.href);
+const API_PATH = "https://review-backend.beaucarnes.repl.co/api/v1/reviews/";
 
-const movieTitle = reviewURL.searchParams("title");
-const movieId = url.searchParams.get("id");
+const reviewURL = new URL(location.href);
 
-const 
+//get the movie id and title paramaters from url
+const movieId = reviewURL.searchParams.get("id");
+const movieTitle = reviewURL.searchParams.get("title");
+
+const displayTitle = document.getElementById("movie-title");
+displayTitle.innerHTML = movieTitle;
 
 const reviewBar = document.getElementById("review-input");
 const userBar = document.getElementById("user-input");

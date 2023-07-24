@@ -79,7 +79,7 @@ function handleDisplayMovie(movie) {
   const movieReviews = document.createElement("a");
   movieReviews.setAttribute("class", "reviews");
   movieReviews.innerHTML = "Reviews";
-  movieReviews.href = `reviews.html?id=${movie.id}title=${movie.title}`;
+  movieReviews.href = `reviews.html?id=${movie.id}&title=${movie.title}`;
 
   const movieContainer = document.createElement("div");
   movieContainer.setAttribute("class", "movie-container");
