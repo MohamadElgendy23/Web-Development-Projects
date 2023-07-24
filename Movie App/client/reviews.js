@@ -5,10 +5,9 @@ const addReview = document.getElementById("add-review");
 
 const reviewsContainer = document.getElementById("reviews-container");
 
-//event listeners
-reviewBar.onclick = () => {
-  reviewBar.placeholder = "";
-};
-userBar.onclick = () => {
-  userBar.placeholder = "";
-};
+//add event listeners
+addEventListener("click", (e) => {
+  if (e.target === reviewBar || e.target === userBar) {
+    e.target.placeholder = "";
+  }
+});
