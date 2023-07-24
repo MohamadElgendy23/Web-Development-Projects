@@ -69,7 +69,47 @@ h3 {
     position: relative;
     top: -11px;
     font-size:medium;
+    color: blue;
+}
+
+.reviews-for-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.reviews-for-container h3 {
+    position: relative;
+    top: -10px;
+}
+
+.new-review-container {
+    position: relative;
+    left: 743px;
+    width: 300px;
+    height: 200px;
+    padding-top: 15px;
+    box-shadow: -5px 5px rgb(73, 71, 71);
+    background-color: rgb(36, 35, 35);
+    border-radius: 19px;
     color: white;
-    background-color: blue;
-    border-radius: 10px;
+    text-align: center;
+}
+
+.new-review-container input {
+    border-radius: 15px;
+    height:28px;
+    width: 215px;
+    background-color: rgb(36, 35, 35);
+    font-size: medium;
+    color: white;
+}
+
+section[id=reviews-container] {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 25px;
+    row-gap: 25px;
 }
