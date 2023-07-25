@@ -7,11 +7,6 @@ reviewsRoutes.get("/movie/:id", async (req, res) => {
   try {
     const movieId = req.params.id;
     const filteredReviews = await Reviews.find({ movieId: movieId });
-    if (!filteredReviews.length) {
-      return res
-        .status(404)
-        .json({ errorMessage: `No reviews for movie with id ${movieId}` });
-    }
     res.status(200).json(filteredReviews);
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });

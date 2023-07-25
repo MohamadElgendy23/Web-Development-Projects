@@ -83,13 +83,14 @@ h3 {
 .reviews-for-container h3 {
     position: relative;
     top: -10px;
+    font-style: italic;
 }
 
 .new-review-container {
     position: relative;
-    left: 735px;
-    width: 320px;
-    height: 200px;
+    left: 710px;
+    width: 370px;
+    height: 210px;
     padding-top: 15px;
     box-shadow: -5px 5px rgb(73, 71, 71);
     background-color: rgb(36, 35, 35);
@@ -101,15 +102,11 @@ h3 {
 .new-review-container input {
     border-radius: 15px;
     height:28px;
-    width: 220px;
+    width: 245px;
     background-color: rgb(36, 35, 35);
     font-size: large;
     color: white;
 }
 
 section[id=reviews-container] {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 25px;
-    row-gap: 25px;
 }
