@@ -108,20 +108,29 @@ h3 {
     color: white;
 }
 
-section[id=reviews-container] {
-    display: grid;
-    grid-template-columns: repeat(3, 400px);
-    row-gap: 30px;
-    padding-left: 340px;
-    padding-top: 75px;
+.no-reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-top: 20px;
 }
 
-.review-container {
+section[id=reviews-container] {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    row-gap: 30px;
+    padding-top: 75px;
+    padding-left: 403px;
+}
+
+#review-container {
     border-radius: 20px;
     box-shadow: -5px 5px rgb(73, 71, 71);
     background-color: rgb(36, 35, 35);
-    padding-top: 35px;
-    width: 300px;
+    padding-top: 30px;
+    width: 280px;
     height: 200px;
     text-align: center;
     font-size: large;
@@ -129,4 +138,22 @@ section[id=reviews-container] {
 
 .review-tools a{
     text-decoration: none;
+}
+
+#update-review-input {
+    border-radius: 15px;
+    height: 28px;
+    width: 200px;
+    font-size: medium;
+    background-color: rgb(36, 35, 35);
+    color: white;
+}
+
+#update-user-input {
+    border-radius: 15px;
+    height: 28px;
+    width: 200px;
+    font-size: medium;
+    background-color: rgb(36, 35, 35);
+    color: white;
 }
