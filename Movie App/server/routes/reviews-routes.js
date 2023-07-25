@@ -16,9 +16,15 @@ reviewsRoutes.get("/movie/:id", async (req, res) => {
 //create new review
 reviewsRoutes.post("/new", async (req, res) => {
   try {
+    const { user, content } = req.body;
+    if (!user.length || !content.length) {
+      return res
+        .status(404)
+        .json({ errorMessage: "User and review cannot be empty!" });
+    }
     const newReview = new Reviews(req.body);
     await newReview?.save();
-    res.status(201).json({ successMessage: "Created review successfully!" });
+    res.status(201).json(newReview);
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });
   }

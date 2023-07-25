@@ -109,4 +109,24 @@ h3 {
 }
 
 section[id=reviews-container] {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    row-gap: 30px;
+    padding-left: 340px;
+    padding-top: 75px;
+}
+
+.review-container {
+    border-radius: 20px;
+    box-shadow: -5px 5px rgb(73, 71, 71);
+    background-color: rgb(36, 35, 35);
+    padding-top: 35px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    font-size: large;
+}
+
+.review-tools a{
+    text-decoration: none;
 }
