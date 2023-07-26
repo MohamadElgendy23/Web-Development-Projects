@@ -118,6 +118,7 @@ async function updateReview(id, user, content) {
 
 //replace inner html on update request
 function handleUpdateReview(id) {
+  //need to fix getting element by only review container since other reviews share same name (wont be able to update a specific container correctly)
   document.getElementById("review-container").innerHTML = `
   <p>
       <input type="text" id="update-review-input" placeholder="Update Review..."></input>
