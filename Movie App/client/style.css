@@ -125,7 +125,7 @@ section[id=reviews-container] {
     padding-left: 403px;
 }
 
-#review-container {
+.review-container {
     border-radius: 20px;
     box-shadow: -5px 5px rgb(73, 71, 71);
     background-color: rgb(36, 35, 35);

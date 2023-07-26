@@ -50,7 +50,8 @@ function displayReviews(reviews) {
 
 function handleDisplayReview(review) {
   const reviewContainer = document.createElement("div");
-  reviewContainer.setAttribute("id", "review-container");
+  reviewContainer.setAttribute("id", `review-container ${review._id}`); //differentiate each review div (for updating)
+  reviewContainer.setAttribute("class", "review-container");
 
   const reviewContent = document.createElement("p");
   reviewContent.setAttribute("class", "review-text");
@@ -118,8 +119,8 @@ async function updateReview(id, user, content) {
 
 //replace inner html on update request
 function handleUpdateReview(id) {
-  //need to fix getting element by only review container since other reviews share same name (wont be able to update a specific container correctly)
-  document.getElementById("review-container").innerHTML = `
+  const review = document.getElementById(`review-container ${id}`);
+  review.innerHTML = `
   <p>
       <input type="text" id="update-review-input" placeholder="Update Review..."></input>
   </p>
