@@ -14,27 +14,37 @@ h3 {
 .top-navbar {
     overflow: hidden;
     background-color: rgb(72, 68, 68);
-    padding: 10px;
+    padding: 9px;
 }
 
 .top-navbar a[class=movies] {
-    display: block;
     color: white;
-    text-align: center;
     text-transform: uppercase;
     font-size: xx-large;
-    padding: 14px 16px;
+    padding: 16px 16px;
     text-decoration: none;
     float: left;
  }
 
+ .top-navbar a[class=prev-page-nav] {
+    position: relative;
+    top:-2px;
+    left: -148px;
+    float: left;
+    color: white;
+    font-size: small;
+    text-transform: uppercase;
+    text-decoration: none;
+ }
+
  .top-navbar a[class=next-page-nav] {
     position: relative;
-    top:-5px;
-    left: 3px;
+    top:-2px;
+    left: -3px;
     float: right;
     color: white;
     font-size: medium;
+    text-transform: uppercase;
     text-decoration: none;
  }
 
@@ -47,6 +57,9 @@ h3 {
     border-radius: 15px;
     height: 28px;
     width: 200px;
+    position: relative;
+    right: -20px;
+    top: 5px;
     font-size: medium;
     background-color: rgb(36, 35, 35);
     color: white;
