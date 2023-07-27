@@ -17,7 +17,7 @@ h3 {
     padding: 10px;
 }
 
-.top-navbar a{
+.top-navbar a[class=movies] {
     display: block;
     color: white;
     text-align: center;
@@ -26,6 +26,16 @@ h3 {
     padding: 14px 16px;
     text-decoration: none;
     float: left;
+ }
+
+ .top-navbar a[class=next-page-nav] {
+    position: relative;
+    top:-5px;
+    left: 3px;
+    float: right;
+    color: white;
+    font-size: medium;
+    text-decoration: none;
  }
 
 .search-container {
