@@ -12,4 +12,4 @@ Visually appealing application featuring 3 fully responsive pages (accessed by <
 Users can also add reviews, update reviews, and delete reviews for each movie, and said reviews and actions are saved for the lifetime of the application. 
 >> Extra Features:
 > When user hovers over a movie, the original html is replaced with new html that contains 1) the description of the movie and 2) the reviews button that once pressed leads to the already mentioned reviews section. When user "unhovers", the original movie html is displayed. 
-> <- arrow at the top left of the application enables users to go to the previous page. -> arrow at the top right enables users to go to the next page.
+> Each page loads up a new set of movies (before search)
