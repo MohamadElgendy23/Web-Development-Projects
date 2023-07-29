@@ -32,6 +32,7 @@ getReviews();
 async function getReviews() {
   try {
     const reviewsRes = await fetch(API_PATH + `movie/${movieId}`);
+    console.log(reviewsRes);
     const reviews = await reviewsRes.json();
     !reviews.length
       ? (noReviewsMessage.hidden = false)
