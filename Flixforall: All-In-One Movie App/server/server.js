@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const reviewsRoutes = require("./routes/reviews-routes");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
@@ -15,7 +16,7 @@ mongoose.connect(process.env.MONGODB_CONN_STRING).then(() => {
 
 app.use("/api/reviews", reviewsRoutes);
 app.use("*", (req, res) => {
-  res.status(404).json({ errorMessage: "Page not found" });
+  res.status(404).sendFile(path.join(__dirname, "./"));
 });
 
 app.listen(4000, () => {
