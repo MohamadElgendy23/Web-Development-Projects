@@ -36,11 +36,8 @@ async function fetchMovies(searchedMovie) {
     originalMovies = [...originalMoviesObj.results];
     displayMovies(0);
   } else {
-    const originalQueryPath = QUERY_PATH;
-    QUERY_PATH += searchedMovie;
-    const fetchedMoviesRes = await fetch(QUERY_PATH);
+    const fetchedMoviesRes = await fetch(QUERY_PATH + searchedMovie);
     const fetchedMoviesObj = await fetchedMoviesRes.json();
-    QUERY_PATH = originalQueryPath;
     fetchedMovies = [...fetchedMoviesObj.results];
     !fetchedMovies.length
       ? (moviesContainer.innerHTML = "<h1>No Movies Found</h1>")
