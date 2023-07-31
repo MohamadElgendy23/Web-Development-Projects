@@ -15,7 +15,8 @@ mongoose.connect(process.env.MONGODB_CONN_STRING).then(() => {
 });
 
 app.use("/api/reviews", reviewsRoutes);
-app.use("*", (req, res) => {
+
+app.all("*", (req, res) => {
   res
     .status(404)
     .sendFile(path.join(__dirname, "./response-pages/404-page/404-page.html"));
