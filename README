@@ -13,4 +13,4 @@ Users can also add reviews, update reviews, and delete reviews for each movie, a
 >> Extra Features:
 > When user hovers over a movie, the original html is replaced with new html that contains 1) the description of the movie and 2) the reviews button that once pressed leads to the already mentioned reviews section. When user "unhovers", the original movie html is displayed. 
 > Each page loads up a new set of movies (before search)
-> ONCE APPLICATION IS COMPLETE, WILL DEPLOY IT USING NETLIFY.
+
