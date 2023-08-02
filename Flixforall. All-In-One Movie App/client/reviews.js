@@ -33,7 +33,7 @@ async function getReviews() {
   try {
     const reviewsRes = await fetch(API_PATH + `movie/${movieId}`);
     if (!reviewsRes.ok) {
-      throw new Error("Request failed with status: ", reviewsRes.status);
+      throw new Error("Get Request failed!");
     }
     const reviews = await reviewsRes.json();
     !reviews.length
