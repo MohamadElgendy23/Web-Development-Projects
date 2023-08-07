@@ -66,7 +66,7 @@ function handleDisplayReview(review) {
 
   const reviewTools = document.createElement("p");
   reviewTools.setAttribute("class", "review-tools");
-  reviewTools.innerHTML = `<a href="#" onclick="handleUpdateReview('${review._id}')">✏️</a><a href="#" onclick="deleteReview('${review._id}')">🗑</a>`;
+  reviewTools.innerHTML = `<a href="#" onclick="handleUpdateReview('${review._id}', '${review.user}', '${review.content}')">✏️</a><a href="#" onclick="deleteReview('${review._id}')">🗑</a>`;
 
   reviewContainer.appendChild(reviewContent);
   reviewContainer.appendChild(reviewUser);
@@ -121,14 +121,14 @@ async function updateReview(id, user, content) {
 }
 
 //replace inner html on update request
-function handleUpdateReview(id) {
+function handleUpdateReview(id, oldUser, oldReview) {
   const review = document.getElementById(`review-container ${id}`);
   review.innerHTML = `
   <p>
-      <input type="text" id="update-review-input" placeholder="Update Review..."></input>
+      <input type="text" id="update-review-input" placeholder='${oldReview}'></input>
   </p>
   <p>
-      <input type="text" id="update-user-input" placeholder="Update User..."></input>
+      <input type="text" id="update-user-input" placeholder='${oldUser}'></input>
   </p>
   <a id="add-update-review" href="#">💾</a> 
   `;
