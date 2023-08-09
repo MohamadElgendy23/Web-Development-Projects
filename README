@@ -3,8 +3,9 @@ WEB DEVELOPMENT PROJECTS
 These projects are full-stack, meaning both client and server are involved. Feel free to download, run, and learn something new! :)
 
 >Languages: JavaScript, HTML, CSS
+>Libraries: React
 >Environments: Node.js
->Frameworks: Express.js, React.js
+>Frameworks: Express.js
 >Databases: MongoDB
 >Helpful Tools: Chrome DevTools, Postman, Insomnia (when needed)
 
