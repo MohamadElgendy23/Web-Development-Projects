@@ -6,7 +6,7 @@ These projects are full-stack, meaning both client and server are involved. Feel
 >Environments: Node.js
 >Frameworks: Express.js
 >Databases: MongoDB
->Templates: EJS (.ejs files for dynamic html)
+>Templates: EJS (.ejs files for dynamic HTML)
 >Helpful Tools: Chrome DevTools, Postman, Insomnia (when needed)
 
 1) Flixforall: An all-in-one movie application for your enjoyement needs!
