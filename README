@@ -4,7 +4,7 @@ These projects are full-stack, meaning both client and server are involved. Feel
 
 >Languages: JavaScript, HTML, CSS
 >Environments: Node.js
->Frameworks: Express.js
+>Frameworks: Express.js, React.js
 >Databases: MongoDB
 >Helpful Tools: Chrome DevTools, Postman, Insomnia (when needed)
 
