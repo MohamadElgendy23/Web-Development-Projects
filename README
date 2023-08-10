@@ -16,4 +16,5 @@ Users can also add reviews, update reviews, and delete reviews for each movie, a
 > When user hovers over a movie, the original html is replaced with new html that contains 1) the description of the movie and 2) the reviews button that once pressed leads to the already mentioned reviews section. When user "unhovers", the original movie html is displayed. 
 > Each page loads up a new set of movies (before search)
 
-2) BookHouse
+2) BookHouse: Exactly like your local library, but online. View, edit, delete, and create books + authors. Visually appealing and easy to use. 
+Utilizes the EJS template such that HTML files are created in .ejs files for easy accessing and storing via client/server communication.
