@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(58, 81, 233);
+    background-color: rgb(26, 26, 26);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -13,7 +13,7 @@ h3 {
 
 .top-navbar {
     overflow: hidden;
-    background-color: rgb(20, 43, 154);
+    background-color: rgb(60, 61, 61);
     padding: 10px;
     border-radius: 19px;
 }
